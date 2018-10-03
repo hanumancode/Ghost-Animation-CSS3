@@ -25,6 +25,7 @@ body {
     background: #fff;
     border-top-left-radius: 70px;
     border-top-right-radius: 70px;
+    animation: animateMove 7s linear infinite, animateColor 0.5s, animateScale 6s linear infinite;
 }
 
 .ghost::before, .ghost::after {
@@ -52,10 +53,12 @@ body {
     top: 25px;
     left: 5px;
     z-index: 99;
+    animation: animateEyesLeft 0.7s linear infinite;
 }
 
 .eyes::after {
     left: 30px;
+    animation: animateEyesRight 0.7s linear infinite;
 }
 
 .bottom {
@@ -68,24 +71,81 @@ body {
 }
 
 .bottom::after, .bottom::before {
-content: "";
-position: absolute;
-height: 0;
-width: 0;
-border: solid 10px #000;
-border-top-color: transparent;
-bottom: -10px;
-left: 10px;
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    border: solid 10px #000;
+    border-top-color: transparent;
+    bottom: -10px;
+    left: 10px;
 }
 
 .bottom::after {
-border-color: #000;
-border-top-color: transparent;
-bottom: -10px;
-left: 30px;
+    border-color: #000;
+    border-top-color: transparent;
+    bottom: -10px;
+    left: 30px;
 }
 
 h2 {
     color: orange;
     text-align: center;
+}
+
+@keyframes animateMove {
+    0% {
+        left: -20%;
+    }
+    100% {
+        left: 100%;
+        transform: scale();
+    }
+}
+
+@keyframes animateScale {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(5);
+        opacity: 1;
+    }
+    75% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0.5;
+    }
+}
+
+@keyframes animateEyesLeft {
+    0%, 100% {
+      left: 5px;
+    }
+    50% {
+      left: 10px;
+    }
+}
+
+@keyframes animateEyesRight {
+    0%, 100% {
+    left: 30px;
+}
+    50% {
+    left: 38px;
+    }
+}
+  
+@keyframes animateColor {
+    50% {
+        background: rgb(249, 249, 200);
+      }
+
 }
