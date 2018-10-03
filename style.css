@@ -1,0 +1,12 @@
+body {
+
+}
+
+.path {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background: #333;
+    padding: 20px;
+    box-sizing: border-box;
+}
