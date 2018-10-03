@@ -58,6 +58,33 @@ body {
     left: 30px;
 }
 
+.bottom {
+    position: absolute;
+    height: 0;
+    width: 0;
+    border: solid 10px #000;
+    border-top-color: transparent;
+    bottom: -10px;
+}
+
+.bottom::after, .bottom::before {
+content: "";
+position: absolute;
+height: 0;
+width: 0;
+border: solid 10px #000;
+border-top-color: transparent;
+bottom: -10px;
+left: 10px;
+}
+
+.bottom::after {
+border-color: #000;
+border-top-color: transparent;
+bottom: -10px;
+left: 30px;
+}
+
 h2 {
     color: orange;
     text-align: center;
