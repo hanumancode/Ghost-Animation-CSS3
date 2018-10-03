@@ -9,4 +9,5 @@ body {
     background: #333;
     padding: 20px;
     box-sizing: border-box;
+    overflow: hidden;
 }
