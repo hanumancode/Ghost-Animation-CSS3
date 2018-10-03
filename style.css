@@ -11,3 +11,16 @@ body {
     box-sizing: border-box;
     overflow: hidden;
 }
+
+.ghost {
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    left: 20%;
+    width: 60px;
+    height: 70px;
+    margin-top: -35px;
+    background: #fff;
+    border-top-left-radius: 70px;
+    border-top-right-radius: 70px;
+}
